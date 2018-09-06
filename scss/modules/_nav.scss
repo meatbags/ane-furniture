@@ -15,12 +15,16 @@
 
     .item {
       padding: $space;
+      padding-bottom: $space * 1.5;
       cursor: pointer;
       position: relative;
       flex: 1;
       display: flex;
       justify-content: center;
       text-transform: uppercase;
+      border-right: $border;
+      border-top: 1px solid rgba(#000, 0);
+      border-bottom: 1px solid rgba(#000, 0);
 
       .over {
         display: flex;
@@ -37,13 +41,14 @@
         width: 100%;
         height: 0;
         opacity: 0;
-        background: $colourAlt;
+        background: linear-gradient(0deg, $white, $colourSecondary);
         transition: $transitionFast;
         z-index: 1;
       }
 
       &:hover, &.active {
-        color: $colourSecondary;
+        //color: $colourSecondary;
+        border-top: $border;
 
         .under {
           height: 100%;

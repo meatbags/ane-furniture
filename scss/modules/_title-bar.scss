@@ -2,24 +2,61 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid rgba(#000, 0.25);
+  padding-top: $space;
+  //border-bottom: 1px solid rgba(#000, 0.25);
+  background: $colourSecondary;
 
   .title-bar__inner {
     width: $width;
     display: flex;
     justify-content: space-between;
+    border-bottom: 3px double rgba(#000, 0.5);
+    margin-bottom: 1px;
 
     @media screen and (max-width: $width) {
       width: 100%;
     }
 
     .logo {
+      padding: $space/ 2;
 
+      img {
+        height: 52px;
+        width: auto;
+      }
     }
 
     .title-bar-nav {
-      .item {
+      display: flex;
+      text-transform: uppercase;
+      padding: $space / 2;
+      padding-bottom: 0;
+      border-bottom: 1px solid rgba(#000, 0.5);
+      margin-bottom: 1px;
 
+      .item {
+        padding: $space;
+        font-size: $fontSmall;
+        //font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        transition: $transitionFast;
+
+        i {
+          padding-bottom: $space / 4;
+        }
+
+        .msg {
+
+        }
+
+        &:hover {
+          //padding-bottom: $space * 1.5;
+          opacity: 0.5;
+        }
       }
     }
   }
