@@ -11,3 +11,17 @@
   margin-top: $y * $space;
   margin-bottom: $y * $space;
 }
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.section__inner {
+  width: $width;
+  
+  @media screen and (max-width: $width) {
+    width: 100%;
+  }
+}

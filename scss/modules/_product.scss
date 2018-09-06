@@ -1,0 +1,7 @@
+.product {
+  @extend .section;
+
+  .product__inner {
+    @extend .section__inner;
+  }
+}

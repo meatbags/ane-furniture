@@ -7,24 +7,26 @@ function anefurni_setup() {
 add_action('after_setup_theme', 'anefurni_setup');
 
 function add_admin_post_types() {
-	register_post_type('anefurni', array(
-		'label' => 'anefurni',
-		'public' => true,
-		'capability_type' => 'post',
-		'hierarchical' => true,
-		'rewrite' => array('slug' => 'anefurni'),
-		'query_var' => true,
-		'menu_icon' => 'dashicons-format-anefurni',
-		'taxonomies' => array('category', 'post_tag'),
-		'supports' => array('title', 'editor', 'revisions', 'thumbnail')
-	));
-	remove_post_type_support('anefurni', 'editor');
+	$custom_types = array('beds', 'cabinets', 'shelves', 'casegoods', 'tables');
+	foreach ($custom_types as $slug) {
+		register_post_type($slug, array(
+			'label' => ucfirst($slug),
+			'public' => true,
+			'capability_type' => 'post',
+			'hierarchical' => true,
+			'rewrite' => array('slug' => $slug),
+			'query_var' => true,
+			'menu_icon' => 'dashicons-admin-page',
+			//'taxonomies' => array('category'),
+			'supports' => array('title', 'page-attributes')
+		));
+	}
 }
 add_action('init', 'add_admin_post_types');
 
 function remove_admin_post_types() {
 	remove_menu_page('edit.php');
-	remove_menu_page('edit.php?post_type=page');
+	//remove_menu_page('edit.php?post_type=page');
 	remove_menu_page('edit-comments.php');
 	//remove_menu_page('plugins.php');
 }

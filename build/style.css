@@ -1,3 +1,16 @@
+.section, .nav, .breadcrumb {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.section__inner, .nav .nav__inner, .breadcrumb .breadcrumb__inner {
+  width: 960px; }
+  @media screen and (max-width: 960px) {
+    .section__inner, .nav .nav__inner, .breadcrumb .breadcrumb__inner {
+      width: 100%; } }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -52,6 +65,9 @@ body {
   font-family: "Karla", sans-serif;
   font-size: 14px; }
 
+a {
+  color: inherit; }
+
 .title-bar {
   width: 100%;
   display: -ms-flexbox;
@@ -102,22 +118,17 @@ body {
         .title-bar .title-bar__inner .title-bar-nav .item:hover {
           opacity: 0.5; }
 
+.nav a {
+  text-decoration: none;
+  color: inherit; }
+
 .nav {
-  width: 100%;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
   .nav .nav__inner {
-    width: 960px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
         justify-content: space-between; }
-    @media screen and (max-width: 960px) {
-      .nav .nav__inner {
-        width: 100%; } }
     .nav .nav__inner .item {
       padding: 8px;
       padding-bottom: 12px;
@@ -130,7 +141,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
       text-transform: uppercase;
-      border-right: 1px solid rgba(0, 0, 0, 0.5);
       border-top: 1px solid rgba(0, 0, 0, 0);
       border-bottom: 1px solid rgba(0, 0, 0, 0); }
       .nav .nav__inner .item .over {
@@ -142,8 +152,13 @@ body {
             flex: 1;
         z-index: 2;
         transition: 0.25s; }
+        .nav .nav__inner .item .over a {
+          -ms-flex: 1;
+              flex: 1;
+          text-align: center; }
       .nav .nav__inner .item .under {
         position: absolute;
+        pointer-events: none;
         top: 0;
         left: 0;
         width: 100%;
@@ -169,7 +184,8 @@ body {
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  background: #eee; }
   .categories .categories__inner {
     width: 960px;
     display: -ms-flexbox;
@@ -197,6 +213,45 @@ body {
     @media screen and (max-width: 960px) {
       .about .about__inner {
         width: 100%; } }
+
+.page-content {
+  width: 100%;
+  min-height: 85vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+  .page-content .page-content__inner {
+    width: 960px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .page-content .page-content__inner .product-item {
+      width: 25%;
+      padding: 8px; }
+    @media screen and (max-width: 960px) {
+      .page-content .page-content__inner {
+        width: 100%; } }
+
+.breadcrumb .breadcrumb__inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  padding-top: 8px; }
+  .breadcrumb .breadcrumb__inner .item {
+    padding-right: 8px;
+    text-transform: capitalize; }
+    .breadcrumb .breadcrumb__inner .item a {
+      text-decoration: none; }
+      .breadcrumb .breadcrumb__inner .item a:hover {
+        opacity: 0.5; }
+    .breadcrumb .breadcrumb__inner .item:nth-child(n + 2) {
+      padding-left: 8px; }
+    .breadcrumb .breadcrumb__inner .item:last-child {
+      opacity: 1; }
 
 .footer {
   width: 100%; }

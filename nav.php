@@ -1,7 +1,9 @@
 <div class='title-bar'>
   <div class='title-bar__inner'>
-    <div class='logo' title='ANE Furniture - Home'>
-      <img src='<?php echo get_template_directory_uri(); ?>/img/logo.png' alt='ANE Logo' />
+    <div class='logo' title='Home'>
+      <a href='<?php echo get_site_url(); ?>'>
+        <img src='<?php echo get_template_directory_uri(); ?>/img/logo.png' alt='ANE Logo' />
+      </a>
     </div>
     <div class='title-bar-nav'>
       <div class='item'>
@@ -19,13 +21,21 @@
     </div>
   </div>
 </div>
+
 <div class='nav'>
   <div class='nav__inner'>
-    <div class='item active'><div class='under'></div><div class='over'>Home</div></div>
-    <div class='item'><div class='under'></div><div class='over'>Beds</div></div>
-    <div class='item'><div class='under'></div><div class='over'>Cabinets</div></div>
-    <div class='item'><div class='under'></div><div class='over'>Shelves</div></div>
-    <div class='item'><div class='under'></div><div class='over'>Casegoods</div></div>
-    <div class='item'><div class='under'></div><div class='over'>Tables</div></div>
+    <?php
+      $title = lcfirst(get_the_title());
+      $slugs = array('home', 'beds', 'cabinets', 'shelves', 'casegoods', 'tables');
+      foreach($slugs as $slug): ?>
+      <div class='<?php echo ($title === $slug ? 'item active' : 'item'); ?>'>
+        <div class='under'></div>
+        <div class='over'>
+          <a href='<?php echo get_site_url() . "/" . $slug; ?>/'>
+            <?php echo $slug; ?>
+          </a>
+        </div>
+      </div>
+    <?php endforeach; ?>
   </div>
 </div>

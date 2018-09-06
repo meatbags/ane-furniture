@@ -1,0 +1,23 @@
+.page-content {
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  border-bottom: $border;
+
+  .page-content__inner {
+    width: $width;
+    display: flex;
+    flex-wrap: wrap;
+
+    .product-item {
+      width: 25%;
+      padding: $space;
+    }
+
+    @media screen and (max-width: $width) {
+      width: 100%;
+
+    }
+  }
+}
