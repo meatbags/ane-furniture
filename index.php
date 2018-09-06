@@ -1,7 +1,18 @@
 <?php
   get_header();
-  echo get_bloginfo('name');
-  wp_footer();
+  get_template_part('nav');
 ?>
-</body>
-</html>
+<div class='carousel'>
+  { CAROUSEL HERE }
+</div>
+<div class='categories'>
+  <div class='categories__inner'>
+    { CATS HERE }
+  </div>
+</div>
+<div class='about'>
+  <div class='about__inner'>
+    { ABOUT TEXT HERE }
+  </div>
+</div>
+<?php get_template_part('footer'); ?>

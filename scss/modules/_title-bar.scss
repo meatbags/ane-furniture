@@ -1,0 +1,26 @@
+.title-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(#000, 0.25);
+
+  .title-bar__inner {
+    width: $width;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: $width) {
+      width: 100%;
+    }
+
+    .logo {
+
+    }
+
+    .title-bar-nav {
+      .item {
+
+      }
+    }
+  }
+}
