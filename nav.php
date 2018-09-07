@@ -15,7 +15,7 @@
         </a>
       </div>
       <div class='item'>
-        <a href='<?php echo $url; ?>/#about'>
+        <a href='<?php echo $url; ?>/about/'>
           <i class="fas fa-question"></i>
           <div class='msg'>About</div>
         </a>

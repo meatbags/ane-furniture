@@ -528,4 +528,13 @@ a {
         font-size: 150%;
         text-decoration: underline;
         text-transform: uppercase; }
+  .about.about-single {
+    min-height: 75vh; }
+    .about.about-single .about__inner {
+      min-height: 75vh; }
+      .about.about-single .about__inner .content {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 64px;
+        padding-bottom: 64px; }
 

@@ -32,4 +32,17 @@
       }
     }
   }
+
+  // single page about
+  &.about-single {
+    min-height: 75vh;
+
+    .about__inner {
+      min-height: 75vh;
+
+      .content {
+        @include pad(2, 8);
+      }
+    }
+  }
 }

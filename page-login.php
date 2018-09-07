@@ -1,6 +1,7 @@
 <?php
   get_header();
   get_template_part('nav');
+  get_template_part('breadcrumb');
 ?>
 <div class='login'>
   <div class='login__inner'>
