@@ -1,17 +1,34 @@
 .about {
-  min-height: 33vh;
+  min-height: 95vh;
   width: 100%;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid rgba(#000, 0.25);
 
   .about__inner {
+    min-height: 95vh;
     width: $width;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 
     @media screen and (max-width: $width) {
       width: 100%;
+    }
+
+    .content {
+      border: 1px solid red;
+      @include pad(6, 8);
+      font-size: $fontHuge;
+      line-height: 1.1;
+      letter-spacing: 1.2px;
+      color: $colourSecondary;
+
+      .title {
+        width: 100%;
+        font-size: 150%;
+        text-decoration: underline;
+        text-align: center;
+      }
     }
   }
 }

@@ -19,6 +19,9 @@
     opacity: 1;
     transform: translateX(0px); }
 
+.parallax.parallax-shadow.active {
+  box-shadow: 10px 10px 20px #000; }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -226,39 +229,39 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+        text-transform: uppercase; }
         .login .login__inner .pane .pane-half .pane-content img {
-          width: 200px;
+          width: 120px;
           height: auto; }
         .login .login__inner .pane .pane-half .pane-content .msg {
-          padding: 8px; }
-        .login .login__inner .pane .pane-half .pane-content form {
-          font-size: 18px; }
-          .login .login__inner .pane .pane-half .pane-content form p {
-            display: -ms-flexbox;
-            display: flex;
-            padding: 8px;
-            -ms-flex-pack: end;
-                justify-content: flex-end;
-            -ms-flex-align: end;
-                align-items: flex-end; }
-            .login .login__inner .pane .pane-half .pane-content form p label {
-              padding-right: 8px; }
-            .login .login__inner .pane .pane-half .pane-content form p input[type='text'], .login .login__inner .pane .pane-half .pane-content form p input[type='password'] {
-              border-radius: 0;
-              width: 120px; }
-            .login .login__inner .pane .pane-half .pane-content form p input[type='submit'] {
-              padding-left: 16px;
-              padding-right: 16px;
-              padding-top: 4px;
-              padding-bottom: 4px;
-              background: #fff;
-              border: 1px solid rgba(0, 0, 0, 0.5);
-              cursor: pointer;
-              text-transform: uppercase;
-              font-size: 18px; }
-              .login .login__inner .pane .pane-half .pane-content form p input[type='submit']:hover {
-                background: #eee; }
+          border-top: 1px solid rgba(0, 0, 0, 0.5);
+          padding: 8px;
+          margin-top: 8px; }
+        .login .login__inner .pane .pane-half .pane-content form p {
+          display: -ms-flexbox;
+          display: flex;
+          padding: 4px;
+          -ms-flex-pack: center;
+              justify-content: center;
+          -ms-flex-align: end;
+              align-items: flex-end; }
+          .login .login__inner .pane .pane-half .pane-content form p label {
+            padding-right: 8px; }
+          .login .login__inner .pane .pane-half .pane-content form p input[type='text'], .login .login__inner .pane .pane-half .pane-content form p input[type='password'] {
+            border-radius: 0;
+            width: 120px; }
+          .login .login__inner .pane .pane-half .pane-content form p input[type='submit'] {
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            text-transform: uppercase; }
+            .login .login__inner .pane .pane-half .pane-content form p input[type='submit']:hover {
+              background: #eee; }
       .login .login__inner .pane .pane-half:first-child {
         border-right: 1px solid rgba(0, 0, 0, 0.5); }
 
@@ -289,7 +292,7 @@ a {
         flex-wrap: wrap; }
     .page-content .page-content__inner .product-item {
       width: 33.33%;
-      height: 240px;
+      height: 250px;
       padding: 16px;
       position: relative;
       display: -ms-flexbox;
@@ -445,7 +448,7 @@ a {
     .categories .categories__inner .cat {
       width: 25%;
       height: 200px; }
-      .categories .categories__inner .cat:hover .cat__inner {
+      .categories .categories__inner .cat:hover .cat__inner .cat-image {
         transform: scale(0.9); }
       .categories .categories__inner .cat a {
         width: 100%;
@@ -458,11 +461,12 @@ a {
           -ms-flex-direction: column;
               flex-direction: column;
           -ms-flex-align: center;
-              align-items: center;
-          transition: 0.5s; }
-          .categories .categories__inner .cat a .cat__inner .cat-image img {
-            width: 128px;
-            height: 128px; }
+              align-items: center; }
+          .categories .categories__inner .cat a .cat__inner .cat-image {
+            transition: 0.25s; }
+            .categories .categories__inner .cat a .cat__inner .cat-image img {
+              width: 128px;
+              height: 128px; }
           .categories .categories__inner .cat a .cat__inner .cat-name {
             padding-left: 4px;
             padding-right: 4px;
@@ -471,7 +475,7 @@ a {
             text-transform: uppercase; }
 
 .about {
-  min-height: 33vh;
+  min-height: 95vh;
   width: 100%;
   display: -ms-flexbox;
   display: flex;
@@ -479,12 +483,28 @@ a {
       justify-content: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
   .about .about__inner {
+    min-height: 95vh;
     width: 960px;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between; }
+    -ms-flex-align: center;
+        align-items: center; }
     @media screen and (max-width: 960px) {
       .about .about__inner {
         width: 100%; } }
+    .about .about__inner .content {
+      border: 1px solid red;
+      padding-left: 48px;
+      padding-right: 48px;
+      padding-top: 64px;
+      padding-bottom: 64px;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: 1.2px;
+      color: #666; }
+      .about .about__inner .content .title {
+        width: 100%;
+        font-size: 150%;
+        text-decoration: underline;
+        text-align: center; }
 

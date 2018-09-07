@@ -1,38 +1,25 @@
 <?php
   get_header();
   get_template_part('nav');
-  $url = get_bloginfo('url') . '/';
-  $temp = get_template_directory_uri() . '/';
 ?>
 <div class='carousel'>
   { CAROUSEL HERE }
 </div>
-<div class='categories'>
-  <div class='categories__inner'>
-    <?php
-      $cats = array('beds', 'suites', 'cabinets', 'shelves', 'drawers', 'tables', 'coffeetables', 'wardrobes');
-      foreach ($cats as $cat):
-        $catImageUrl = $temp . 'img/' . $cat . '.png';
-        $catUrl = $url . 'category/' . $cat;
-        ?>
-    <div class='cat parallax-hide'>
-      <a href='<?php echo $catUrl; ?>'>
-        <div class='cat__inner'>
-          <div class='cat-image'>
-            <img src='<?php echo $catImageUrl; ?>' alt=''/>
-          </div>
-          <div class='cat-name'>
-            <?php echo $cat; ?>
-          </div>
-        </div>
-      </a>
-    </div>
-    <?php endforeach; ?>
-  </div>
-</div>
-<div class='about'>
+<?php get_template_part('cats'); ?>
+<div id='about' class='about'>
   <div class='about__inner'>
-    { ABOUT TEXT HERE }
+    <?php
+      $q = new WP_Query( 'pagename=about' );
+      while($q->have_posts()):
+        $q->the_post(); ?>
+        <div class='content parallax parallax-shadow'>
+          <div class='title'>About Us</div><br />
+          <?php the_content(); ?>
+        </div>
+      <?php
+      endwhile;
+      wp_reset_postdata();
+    ?>
   </div>
 </div>
 <?php get_template_part('footer'); ?>

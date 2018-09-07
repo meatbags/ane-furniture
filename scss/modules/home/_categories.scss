@@ -22,7 +22,9 @@
 
       &:hover {
         .cat__inner {
-          transform: scale(0.9);
+          .cat-image {
+            transform: scale(0.9);
+          }
         }
       }
 
@@ -36,9 +38,9 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          transition: $transition;
 
           .cat-image {
+            transition: $transitionFast;
             img {
               width: 128px;
               height: 128px;

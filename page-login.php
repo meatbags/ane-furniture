@@ -21,15 +21,16 @@
                 'form_id' => 'loginform-custom',
                 'label_username' => __( 'Username:' ),
                 'label_password' => __( 'Password:' ),
-                'label_remember' => __( 'Recall Me' ),
+                'label_remember' => __( 'Remember me' ),
                 'label_log_in' => __( 'Log In' ),
                 'remember' => true
               );
               wp_login_form( $args );
             } else {
-              wp_loginout( home_url() ); // Display "Log Out" link.
-              echo " | ";
-              wp_register('', ''); // Display "Site Admin" link.
+              wp_loginout( home_url() ); ?>
+              <br />
+              <a href='<?php echo get_bloginfo('url'); ?>/wp-admin/' target='_blank'>Members Area</a>
+              <?php
             }
           ?>
         </div>

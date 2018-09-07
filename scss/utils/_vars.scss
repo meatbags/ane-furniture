@@ -1,10 +1,10 @@
 $colourPrimary: #222;
-$colourSecondary: #eee;
-$colourAlt: #222;
+$colourSecondary: #666;
+$colourAlt: #eee;
 $colourBackground: #eee;
 $white: #fff;
 $black: #000;
-$colourGradient: linear-gradient(0deg, $white, $colourSecondary);
+$colourGradient: linear-gradient(0deg, $white, $colourAlt);
 
 $space: 8px;
 $width: 960px;

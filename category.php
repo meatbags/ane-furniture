@@ -4,7 +4,10 @@
 ?>
 
 <div class='page-title'>
-  <div class='page-title__inner'>Category: <?php single_cat_title(); ?></div>
+  <div class='page-title__inner'>
+    <a href='<?php echo get_bloginfo('url'); ?>/'>Home</a>
+    &nbsp;&nbsp;&rarr;&nbsp;&nbsp;
+    Category: <?php single_cat_title(); ?></div>
 </div>
 <div class='page-content'>
   <div class='page-content__inner'>
