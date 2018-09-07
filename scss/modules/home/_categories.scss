@@ -1,5 +1,5 @@
 .categories {
-  min-height: 33vh;
+  @include pad(0, 4);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -7,12 +7,50 @@
   background: $colourBackground;
 
   .categories__inner {
+    @include pad(2, 4);
     width: $width;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
 
     @media screen and (max-width: $width) {
       width: 100%;
+    }
+
+    .cat {
+      width: 25%;
+      height: 200px;
+
+      &:hover {
+        .cat__inner {
+          transform: scale(0.9);
+        }
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+
+        .cat__inner {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: $transition;
+
+          .cat-image {
+            img {
+              width: 128px;
+              height: 128px;
+            }
+          }
+
+          .cat-name {
+            @include pad(0.5, 0.25);
+            text-transform: uppercase;
+          }
+        }
+      }
     }
   }
 }

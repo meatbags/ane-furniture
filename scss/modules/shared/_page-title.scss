@@ -1,0 +1,13 @@
+.page-title {
+  @extend .section;
+
+  .page-title__inner {
+    @extend .section__inner;
+    @include pad(2, 0.5);
+    display: flex;
+    justify-content: flex-start;
+    background: $colourGradient;
+    border-top: 1px solid rgba($black, 0.25);
+    margin-top: 1px;
+  }
+}

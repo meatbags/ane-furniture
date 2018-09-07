@@ -1,0 +1,38 @@
+.breadcrumb {
+  @extend .section;
+
+  .breadcrumb__inner {
+    margin-top: 1px;
+    @extend .section__inner;
+    display: flex;
+    justify-content: flex-start;
+    background: $colourGradient;
+    border-top: 1px solid rgba($black, 0.25);
+
+    .list {
+      @include pad(1, 0);
+      display: flex;
+      justify-content: flex-start;
+      background: $colourGradient;
+
+      .item {
+        @include pad(1, 0.5);
+        text-transform: capitalize;
+
+        a {
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+
+        &:last-child {
+          opacity: 1;
+        }
+      }
+
+      .divider {
+        @include pad(0, 0.5);
+      }
+    }
+  }
+}

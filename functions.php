@@ -6,8 +6,12 @@ function anefurni_setup() {
 }
 add_action('after_setup_theme', 'anefurni_setup');
 
+function get_custom_types() {
+	return array('suites', 'beds', 'cabinets', 'shelves', 'casegoods', 'tables');
+}
+
 function add_admin_post_types() {
-	$custom_types = array('beds', 'cabinets', 'shelves', 'casegoods', 'tables');
+	$custom_types = get_custom_types();
 	foreach ($custom_types as $slug) {
 		register_post_type($slug, array(
 			'label' => ucfirst($slug),
@@ -17,12 +21,22 @@ function add_admin_post_types() {
 			'rewrite' => array('slug' => $slug),
 			'query_var' => true,
 			'menu_icon' => 'dashicons-admin-page',
-			//'taxonomies' => array('category'),
+			'taxonomies' => array('category'),
 			'supports' => array('title', 'page-attributes')
 		));
 	}
 }
 add_action('init', 'add_admin_post_types');
+
+function custom_post_type_cat_filter($query) {
+	$custom_types = get_custom_types();
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ($query->is_category()) {
+      $query->set('post_type', $custom_types);
+    }
+  }
+}
+add_action('pre_get_posts', 'custom_post_type_cat_filter');
 
 function remove_admin_post_types() {
 	remove_menu_page('edit.php');
@@ -61,4 +75,17 @@ function anefurni_load_scripts() {
 	wp_enqueue_style('anefurni_style' );
 }
 
+function my_login_logo() { ?>
+  <style type="text/css">
+    #login h1 a, .login h1 a {
+	    background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png);
+			height: 52px;
+			width: 126px;
+			background-size: 126px 52px;
+			background-repeat: no-repeat;
+	  	padding-bottom: 8px;
+    }
+  </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
 ?>

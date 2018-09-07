@@ -1,0 +1,10 @@
+.parallax-hide {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: $transitionSlow;
+
+  &.parallax-active {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

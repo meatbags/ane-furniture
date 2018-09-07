@@ -1,0 +1,109 @@
+.page-content {
+  @include pad(0, 2);
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .page-content__inner {
+    width: $width;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .product-item {
+      width: 33.33%;
+      height: 240px;
+      padding: $space * 2;
+      position: relative;
+      display: flex;
+
+      a {
+        width: 100%;
+        height: 100%;
+
+        .product-item__image {
+          width: 100%;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: auto;
+            transition: $transition;
+          }
+        }
+
+        .product-item__title {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: $space * 3;
+          padding-right: $space * 4;
+          transform: translate(-4px, -4px);
+          transition: $transition;
+
+          .eye {
+            opacity: 0;
+            transition: $transition;
+            font-size: $fontSmall;
+          }
+        }
+      }
+
+      .product-item__border {
+        pointer-events: none;
+        opacity: 0;
+        transform: scale(0.9, 0.9);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: $border;
+        transition: $transition;
+      }
+
+      &:hover {
+        a {
+          .product-item__image {
+            img {
+              transform: scale(.95, .95);
+            }
+          }
+
+          .product-item__title {
+            opacity: 1;
+            transform: translate(0, 0);
+
+            .eye {
+              opacity: 0.5;
+            }
+          }
+        }
+
+        .product-item__border {
+          opacity: 1;
+          transform: scale(0.95, 0.95);
+          box-shadow: 5px 5px 10px rgba($black, 0.1);
+        }
+      }
+    }
+
+    @media screen and (max-width: $width) {
+      width: 100%;
+
+      .product-item {
+        width: 50%;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      .product-item {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -6,15 +6,15 @@
 .nav {
   @extend .section;
   border-bottom: 1px solid rgba(#000, 0.25);
+  margin-top: $titleBarHeight;
 
   .nav__inner {
     @extend .section__inner;
     display: flex;
     justify-content: space-between;
+    margin-top: 1px;
 
     .item {
-      padding: $space;
-      padding-bottom: $space * 1.5;
       cursor: pointer;
       position: relative;
       flex: 1;
@@ -34,6 +34,10 @@
         a {
           flex: 1;
           text-align: center;
+          width: 100%;
+          height: 100%;
+          padding: $space;
+          padding-bottom: $space * 1.5;
         }
       }
 
@@ -45,7 +49,7 @@
         width: 100%;
         height: 0;
         opacity: 0;
-        background: linear-gradient(0deg, $white, $colourSecondary);
+        background: $colourGradient;
         transition: $transitionFast;
         z-index: 1;
       }

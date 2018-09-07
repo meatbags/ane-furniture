@@ -1,8 +1,10 @@
 .footer {
-  width: 100%;
+  @extend .section;
+  background: $colourSecondary;
+  height: $footerHeight;
 
   .footer__inner {
-    width: 100%;
+    @extend .section__inner;
     display: flex;
     justify-content: space-between;
 

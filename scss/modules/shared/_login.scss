@@ -1,0 +1,74 @@
+.login {
+  @extend .section;
+  min-height: 85vh;
+
+  .login__inner {
+    @extend .section__inner;
+
+    .pane {
+      width: 100%;
+      display: flex;
+      @include pad(0, 6);
+
+      .pane-half {
+        width: 50%;
+        min-height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .pane-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          img {
+            width: 200px;
+            height: auto;
+          }
+
+          .msg {
+            padding: $space;
+          }
+
+          form {
+            font-size: $fontLarge;
+
+            p {
+              display: flex;
+              padding: $space;
+              justify-content: flex-end;
+              align-items: flex-end;
+
+              label {
+                padding-right: $space;
+              }
+
+              input[type='text'], input[type='password'] {
+                border-radius: 0;
+                width: 120px;
+              }
+
+              input[type='submit'] {
+                @include pad(2, 0.5);
+                background: $white;
+                border: $border;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-size: $fontLarge;
+
+                &:hover {
+                  background: $colourBackground;
+                }
+              }
+            }
+          }
+        }
+
+        &:first-child {
+          border-right: $border;
+        }
+      }
+    }
+  }
+}

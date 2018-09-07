@@ -4,10 +4,19 @@ $colourAlt: #222;
 $colourBackground: #eee;
 $white: #fff;
 $black: #000;
+$colourGradient: linear-gradient(0deg, $white, $colourSecondary);
 
 $space: 8px;
 $width: 960px;
+$mobile: 760px;
+$titleBarHeight: 76px;
+$footerHeight: 66px;
+
 $transition: 0.5s;
 $transitionFast: 0.25s;
+$transitionSlow: 1s;
 
 $border: 1px solid rgba(#000, 0.5);
+$borderAlt: 3px double rgba(#000, 0.5);
+
+$zTitle: 100;
