@@ -1,0 +1,10 @@
+.no-products {
+  @include pad(8, 8);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .no-products__inner {
+    
+  }
+}

@@ -3,7 +3,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid rgba(#000, 0.25);
 
   .about__inner {
     min-height: 95vh;
@@ -16,18 +15,20 @@
     }
 
     .content {
-      border: 1px solid red;
-      @include pad(6, 8);
+      @include pad(8, 8);
       font-size: $fontHuge;
-      line-height: 1.1;
-      letter-spacing: 1.2px;
+      line-height: 1.25;
+      letter-spacing: 0.5px;
       color: $colourSecondary;
+      //background: $colourGradient;
+      //border: $border;
+      text-align: justify;
 
       .title {
         width: 100%;
         font-size: 150%;
         text-decoration: underline;
-        text-align: center;
+        text-transform: uppercase;
       }
     }
   }

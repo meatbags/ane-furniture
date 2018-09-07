@@ -39,7 +39,7 @@ function custom_post_type_cat_filter($query) {
 add_action('pre_get_posts', 'custom_post_type_cat_filter');
 
 function remove_admin_post_types() {
-	remove_menu_page('edit.php');
+	//remove_menu_page('edit.php');
 	//remove_menu_page('edit.php?post_type=page');
 	remove_menu_page('edit-comments.php');
 	//remove_menu_page('plugins.php');

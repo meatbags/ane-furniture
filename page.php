@@ -30,7 +30,7 @@
         <?php
       endwhile;
     else: ?>
-      No products currently available.&nbsp;<a href='<?php echo get_bloginfo('url'); ?>'>Keep searching</a>
+      <?php get_template_part('no-products'); ?>
     <?php
     endif;
     ?>
@@ -38,5 +38,4 @@
 </div>
 
 <?php get_template_part('cats'); ?>
-
 <?php get_template_part('footer'); ?>
