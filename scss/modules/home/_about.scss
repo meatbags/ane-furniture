@@ -1,14 +1,10 @@
 .about {
-  min-height: 95vh;
   width: 100%;
   display: flex;
   justify-content: center;
 
   .about__inner {
-    min-height: 95vh;
     width: $width;
-    display: flex;
-    align-items: center;
 
     @media screen and (max-width: $width) {
       width: 100%;
@@ -18,7 +14,7 @@
       @include pad(8, 8);
       font-size: $fontHuge;
       line-height: 1.25;
-      letter-spacing: 0.5px;
+      //letter-spacing: 0.5px;
       color: $colourSecondary;
       //background: $colourGradient;
       //border: $border;

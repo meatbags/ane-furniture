@@ -1,4 +1,74 @@
 .carousel {
   width: 100%;
   height: 50vh;
+  overflow: hidden;
+  border-top: 1px solid rgba($black, 0.25);
+  border-bottom: 1px solid rgba($black, 0.25);
+  margin-top: 1px;
+  margin-bottom: 1px;
+  position: relative;
+
+  .carousel-overlay {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $colourGradientAlt;
+    pointer-events: none;
+    opacity: 0.25;
+  }
+
+  .carousel-slider {
+    transition: $transitionMedium;
+  }
+
+  .carousel__inner {
+    @include pad(0, 2);
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+
+    .slide {
+      height: 100%;
+      opacity: 0.25;
+      transition: $transitionMedium;
+      cursor: pointer;
+
+      img {
+        transform: scale(0.8);
+        transition: $transitionMedium;
+        height: 100%;
+        width: auto;
+        user-select: none;
+        user-drag: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+
+      .title {
+        opacity: 0;
+        transition: $transitionMedium;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &.active {
+        opacity: 1;
+
+        .title {
+          opacity: 1;
+        }
+
+        img {
+          transform: scale(1);
+        }
+      }
+    }
+  }
 }

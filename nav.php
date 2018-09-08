@@ -40,7 +40,7 @@
   <div class='nav__inner'>
     <?php
       $title = lcfirst(get_the_title());
-      $slugs = array('beds', 'suites', 'cabinets', 'shelves', 'casegoods', 'tables');
+      $slugs = array('beds', 'cabinets', 'shelves', 'casegoods', 'tables', 'suites');
       foreach($slugs as $slug): ?>
       <div class='<?php echo ($title === $slug ? 'item active' : 'item'); ?>'>
         <div class='under'></div>

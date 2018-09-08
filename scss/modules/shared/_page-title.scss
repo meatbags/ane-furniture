@@ -3,7 +3,7 @@
 
   .page-title__inner {
     @extend .section__inner;
-    @include pad(2, 0.5);
+    @include pad(2, 1);
     display: flex;
     justify-content: flex-start;
     background: $colourGradient;
