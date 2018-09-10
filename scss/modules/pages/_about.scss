@@ -6,18 +6,11 @@
   .about__inner {
     width: $width;
 
-    @media screen and (max-width: $width) {
-      width: 100%;
-    }
-
     .content {
       @include pad(8, 8);
       font-size: $fontHuge;
-      line-height: 1.25;
-      //letter-spacing: 0.5px;
+      line-height: 1.2;
       color: $colourSecondary;
-      //background: $colourGradient;
-      //border: $border;
       text-align: justify;
 
       .title {
@@ -27,18 +20,25 @@
         text-transform: uppercase;
       }
     }
+
+    @media screen and (max-width: $width) {
+      width: 100%;
+    }
   }
 
   // single page about
   &.about-single {
-    min-height: 75vh;
-
     .about__inner {
-      min-height: 75vh;
-
       .content {
         @include pad(2, 8);
       }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    .about__inner .content {
+      font-size: $fontLarge;
+      @include pad(3, 4);
     }
   }
 }

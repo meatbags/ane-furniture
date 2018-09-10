@@ -62,6 +62,7 @@
         i {
           padding-bottom: $space / 2;
           font-size: $fontSize;
+          transition: $transitionFast;
         }
 
         .msg {
@@ -74,6 +75,9 @@
         &:hover {
           //padding-bottom: $space * 1.5;
           opacity: 0.5;
+          i {
+            padding-bottom: $space * 0.75;
+          }
         }
       }
     }

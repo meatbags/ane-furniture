@@ -29,6 +29,8 @@
               wp_login_form( $args );
             } else {
               wp_loginout( home_url() ); ?>
+
+
               <br />
               <a href='<?php echo get_bloginfo('url'); ?>/wp-admin/' target='_blank'>Members Area</a>
               <?php

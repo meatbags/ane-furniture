@@ -32,6 +32,14 @@
           <div class='msg'>Log In</div>
         </a>
       </div>
+      <?php if (is_user_logged_in()): ?>
+        <div class='item'>
+          <a href='<?php echo $url; ?>/documents/'>
+            <i class="fas fa-file"></i>
+            <div class='msg'>Docs</div>
+          </a>
+        </div>
+      <?php endif; ?>
     </div>
   </div>
 </div>

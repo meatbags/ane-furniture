@@ -2,6 +2,7 @@ $colourPrimary: #222;
 $colourSecondary: #666;
 $colourAlt: #e8e8ef;
 $colourBackground: $colourAlt;
+$colourDark: darken(#e8e8ea, 12.5%);
 $white: #fff;
 $black: #000;
 $colourGradient: linear-gradient(0deg, $white, $colourAlt);
@@ -11,7 +12,7 @@ $space: 8px;
 $width: 960px;
 $mobile: 760px;
 $titleBarHeight: 76px;
-$footerHeight: 100px;
+$footerHeight: 150px;
 
 $transition: 0.5s;
 $transitionFast: 0.25s;
@@ -20,5 +21,6 @@ $transitionMedium: 0.7s;
 
 $border: 1px solid rgba(#000, 0.5);
 $borderAlt: 3px double rgba(#000, 0.5);
+$borderSoft: 1px solid rgba(#000, 0.25);
 
 $zTitle: 100;

@@ -1,0 +1,9 @@
+.documents {
+  @extend .section;
+  min-height: 60vh;
+
+  .documents__inner {
+    @extend .section__inner;
+    @include pad(3, 6);
+  }
+}
