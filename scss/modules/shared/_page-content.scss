@@ -65,7 +65,7 @@
         transition: $transition;
       }
 
-      @media (hover: hover) {
+      @media screen and (min-width: $mobile) {
         &:hover {
           a {
             .product-item__image {

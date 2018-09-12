@@ -76,7 +76,7 @@
           }
         }
 
-        @media (hover: hover) {
+        @media screen and (min-width: $mobile) {
           &:hover {
             opacity: 0.5;
             i {

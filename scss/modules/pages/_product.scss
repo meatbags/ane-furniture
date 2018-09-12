@@ -116,7 +116,7 @@
             height: auto;
           }
 
-          @media (hover: hover) {
+          @media screen and (min-width: $mobile) {
             &:hover { opacity: 1; }
           }
 
