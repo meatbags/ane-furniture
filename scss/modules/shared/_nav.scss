@@ -54,8 +54,18 @@
         z-index: 1;
       }
 
-      &:hover, &.active {
-        //color: $colourSecondary;
+      @media (hover: hover) {
+        &:hover {
+          border-top: $border;
+
+          .under {
+            height: 100%;
+            opacity: 1;
+          }
+        }
+      }
+
+      &.active {
         border-top: $border;
 
         .under {

@@ -3,7 +3,7 @@
   get_template_part('nav');
   get_template_part('breadcrumb');
   $slug = lcfirst(get_the_title());
-  $query = new WP_Query(array('post_type' => $slug, 'post_count' => -1, 'order' => 'ASC', 'order_by' => 'menu_order'));
+  $query = new WP_Query(array('post_type' => $slug, 'posts_per_page' => -1, 'order' => 'ASC', 'order_by' => 'menu_order'));
 ?>
 
 <div class='page-content'>
@@ -22,7 +22,7 @@
               <img src='<?php echo $thumb['sizes']['medium']; ?>' alt='' />
             </div>
             <div class='product-item__title'>
-              <span class='eye'>&rarr;&nbsp;</span><?php echo $title; ?>
+              <?php echo $title; ?>
             </div>
           </a>
           <div class='product-item__border'></div>

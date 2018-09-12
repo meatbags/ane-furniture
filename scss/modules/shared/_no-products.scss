@@ -1,10 +1,10 @@
 .no-products {
-  @include pad(8, 8);
+  @include pad(3, 6);
   width: 100%;
   display: flex;
-  justify-content: center;
+  font-size: $fontLarge;
 
   .no-products__inner {
-    
+
   }
 }

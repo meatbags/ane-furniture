@@ -1,36 +1,33 @@
 .about {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  @extend .section;
 
   .about__inner {
-    width: $width;
+    @extend .section__inner;
 
     .content {
-      @include pad(8, 8);
-      font-size: $fontHuge;
+      @include pad(12, 12);
+      font-size: $fontLarge;
       line-height: 1.2;
       color: $colourSecondary;
       text-align: justify;
 
       .title {
         width: 100%;
-        font-size: 150%;
+        font-size: $fontHuge;
         text-decoration: underline;
         text-transform: uppercase;
       }
-    }
 
-    @media screen and (max-width: $width) {
-      width: 100%;
+      a {
+        text-transform: uppercase;
+      }
     }
   }
 
-  // single page about
   &.about-single {
     .about__inner {
       .content {
-        @include pad(2, 8);
+        @include pad(3, 6);
       }
     }
   }
@@ -38,7 +35,7 @@
   @media screen and (max-width: $mobile) {
     .about__inner .content {
       font-size: $fontLarge;
-      @include pad(3, 4);
+      @include pad(2, 8);
     }
   }
 }

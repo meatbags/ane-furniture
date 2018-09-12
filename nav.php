@@ -8,7 +8,7 @@
       </a>
     </div>
     <div class='title-bar-nav'>
-      <div class='item'>
+      <div class='item mobile-hide'>
         <a href='<?php echo $url; ?>/'>
           <i class="fas fa-home"></i>
           <div class='msg'>Home</div>
@@ -27,19 +27,18 @@
         </a>
       </div>
       <div class='item'>
-        <a href='<?php echo $url; ?>/login/'>
-          <i class="fas fa-user"></i>
-          <div class='msg'>Log In</div>
-        </a>
-      </div>
-      <?php if (is_user_logged_in()): ?>
-        <div class='item'>
-          <a href='<?php echo $url; ?>/documents/'>
-            <i class="fas fa-file"></i>
-            <div class='msg'>Docs</div>
+        <?php if (is_user_logged_in()): ?>
+          <a href='<?php echo $url; ?>/members/'>
+            <i class="fas fa-user"></i>
+            <div class='msg'>Members</div>
           </a>
-        </div>
-      <?php endif; ?>
+        <?php else: ?>
+          <a href='<?php echo $url; ?>/login/'>
+            <i class="fas fa-user"></i>
+            <div class='msg'>Log In</div>
+          </a>
+        <?php endif; ?>
+      </div>
     </div>
   </div>
 </div>
@@ -49,8 +48,10 @@
     <?php
       $title = lcfirst(get_the_title());
       $slugs = array('beds', 'cabinets', 'shelves', 'casegoods', 'tables', 'suites');
-      foreach($slugs as $slug): ?>
-      <div class='<?php echo ($title === $slug ? 'item active' : 'item'); ?>'>
+      foreach($slugs as $slug):
+        $mobileHide = ($slug == 'cabinets' || $slug == 'tables') ? ' mobile-hide' : '';
+        ?>
+      <div class='<?php echo ($title === $slug ? 'item active' : 'item'); ?><?php echo $mobileHide; ?>'>
         <div class='under'></div>
         <div class='over'>
           <a href='<?php echo get_site_url() . "/" . $slug; ?>/'>

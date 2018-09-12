@@ -7,7 +7,7 @@ function anefurni_setup() {
 add_action('after_setup_theme', 'anefurni_setup');
 
 function get_custom_types() {
-	return array('suites', 'beds', 'cabinets', 'shelves', 'casegoods', 'tables');
+	return array('suites', 'beds', 'cabinets', 'shelves', 'casegoods', 'tables', 'documents');
 }
 
 function add_admin_post_types() {
@@ -21,7 +21,7 @@ function add_admin_post_types() {
 			'rewrite' => array('slug' => $slug),
 			'query_var' => true,
 			'menu_icon' => 'dashicons-admin-page',
-			'taxonomies' => array('category'),
+			'taxonomies' => (($slug != 'documents') ? array('category') : array()),
 			'supports' => array('title', 'page-attributes')
 		));
 	}
@@ -39,7 +39,7 @@ function custom_post_type_cat_filter($query) {
 add_action('pre_get_posts', 'custom_post_type_cat_filter');
 
 function remove_admin_post_types() {
-	//remove_menu_page('edit.php');
+	remove_menu_page('edit.php');
 	//remove_menu_page('edit.php?post_type=page');
 	remove_menu_page('edit-comments.php');
 	//remove_menu_page('plugins.php');

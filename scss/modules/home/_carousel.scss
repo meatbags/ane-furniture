@@ -27,6 +27,7 @@
       transition: $transition;
       top: 50%;
       transform: translateY(-50%);
+
       i {
         transition: $transition;
       }
@@ -55,6 +56,12 @@
     .carousel-right {
       right: 0;
     }
+
+    @media screen and (max-width: $mobile) {
+      .carousel-left, .carousel-right {
+        padding: $space * 2;
+      }
+    }
   }
 
   .carousel-overlay {
@@ -69,7 +76,8 @@
   }
 
   .carousel-slider {
-    transition: $transitionMedium;
+    transform: translateX(-800px);
+    transition: $transitionSlow;
   }
 
   .carousel__inner {
@@ -87,7 +95,6 @@
       position: relative;
 
       img {
-        transform: scale(0.8);
         transition: $transitionMedium;
         height: 100%;
         width: auto;
@@ -149,6 +156,21 @@
 
         img {
           transform: scale(1);
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      .slide {
+        min-width: 100vw;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        .slide-title {
+          @include margin(2, 2);
         }
       }
     }

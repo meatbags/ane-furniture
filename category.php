@@ -25,7 +25,7 @@
               <img src='<?php echo $thumb['sizes']['medium']; ?>' alt=''/>
             </div>
             <div class='product-item__title'>
-              <span class='eye'>&rarr;&nbsp;</span><?php echo $title; ?>
+              <?php echo $title; ?>
             </div>
           </a>
           <div class='product-item__border'></div>

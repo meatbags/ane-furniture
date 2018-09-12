@@ -20,8 +20,14 @@
 
 .section__inner {
   width: $width;
-  
+
   @media screen and (max-width: $width) {
     width: 100%;
+  }
+}
+
+.mobile-hide {
+  @media screen and (max-width: $mobile) {
+    display: none !important;
   }
 }

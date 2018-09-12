@@ -13,10 +13,6 @@
 	<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/og-image.jpg"/>
 	<meta property="og:site_name" content="ANE Furniture"/>
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-	<!--
-	<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-	-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 	<script type="text/javascript">
@@ -26,6 +22,12 @@
 		var appRoot = '<?php echo get_template_directory_uri(); ?>/';
 	//]]>
 	</script>
+	<noscript>
+		<style type='text/css'>
+			.parallax-hide { opacity: 1; transform: translateX(0px); }
+			.parallax-slide {	opacity: 1; transform: translate(0px); }
+		</style>
+	</noscript>
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png">
 </head>
 <body <?php body_class(); ?>>

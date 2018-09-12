@@ -1,0 +1,63 @@
+.members {
+  @extend .section;
+  min-height: 60vh;
+
+  .members__inner {
+    @extend .section__inner;
+    @include pad(3, 6);
+
+    .title {
+      font-size: $fontHuge;
+      text-decoration: underline;
+    }
+
+    .members-nav {
+      @include pad(0, 2);
+      width: 100%;
+      display: flex;
+      margin-bottom: $space * 4;
+      
+      .item {
+        padding-right: $space;
+      }
+    }
+
+    .members-docs {
+      @include pad(0, 2);
+
+      .title {
+        font-size: $fontHuge;
+        text-decoration: underline;
+      }
+
+      .doc {
+        @include margin(0, 0.5);
+        padding: $space;
+        width: 100%;
+        background: $colourBackground;
+
+        .doc-title {
+          @include pad(1, 0.5);
+          font-weight: bold;
+        }
+
+        .doc-files {
+          @include pad(4, 0.5);
+
+          .item {
+            display: flex;
+            padding-bottom: $space;
+
+            .item-title {
+              padding-right: $space * 2;
+            }
+
+            .item-download {
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

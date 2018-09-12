@@ -8,13 +8,13 @@
       <div class='item'><a href='<?php echo $url; ?>/contact/'>Contact</a></div>
       <div class='item'><a href='<?php echo $url; ?>/login/'>Log In</a></div>
     </div>
-    <div class='column'>
+    <div class='column mobile-hide'>
       <div class='item'><a href='<?php echo $url; ?>/beds/'>Beds</a></div>
       <div class='item'><a href='<?php echo $url; ?>/cabinets/'>Cabinets</a></div>
       <div class='item'><a href='<?php echo $url; ?>/shelves/'>Shelves</a></div>
       <div class='item'><a href='<?php echo $url; ?>/tables/'>Tables</a></div>
     </div>
-    <div class='column'>
+    <div class='column mobile-hide'>
       <div class='item'><a href='<?php echo $url; ?>/category/drawers/'>Drawers</a></div>
       <div class='item'><a href='<?php echo $url; ?>/category/coffeetables/'>Coffee Tables</a></div>
       <div class='item'><a href='<?php echo $url; ?>/category/wardrobes/'>Wardrobes</a></div>

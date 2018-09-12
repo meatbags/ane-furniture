@@ -8,9 +8,9 @@ $title = get_the_title();
 $colours = $var['colour'];
 $thumb = $var['thumbnail_image'];
 $gallery = $var['image_gallery'];
-$size = $var['size']; //et_field('size');
-$dimensions = $var['dimensions']; //get_field('dimensions'); // dimension_label, dimension_value
-$remarks = $var['remarks']; //get_field('remarks');
+$size = $var['size'];
+$dimensions = $var['dimensions'];
+$remarks = $var['remarks'];
 $number = get_field('product_reference_number');
 ?>
 
@@ -54,16 +54,15 @@ $number = get_field('product_reference_number');
 
     <div class='product-pane right'>
       <?php if ($number): ?>
-        <div class='heading'>Reference Number</div>
-        <div class='number'><?php echo $number; ?></div>
+        <div class='heading'>Reference Number <?php echo $number; ?></div><br />
       <?php endif; ?>
       <?php if ($colours): ?>
         <div class='heading'>Colours</div>
-        <div class='colours'><?php echo $colours; ?></div>
+        <div class='colours'><?php echo $colours; ?></div><br />
       <?php endif; ?>
       <?php if ($size): ?>
         <div class='heading'>Sizes</div>
-        <div class='size'><?php echo $size; ?></div>
+        <div class='size'><?php echo $size; ?></div><br />
       <?php endif; ?>
       <?php if ($dimensions && sizeof($dimensions) > 0 && $dimensions[0]['dimension_label']): ?>
         <div class='heading'>Dimensions</div>
@@ -74,17 +73,17 @@ $number = get_field('product_reference_number');
               <div class='dimension-value'><?php echo $d['dimension_value']; ?></div>
             </div>
           <?php endforeach; ?>
-        </div>
+        </div><br />
       <?php endif; ?>
       <?php if ($remarks): ?>
         <div class='heading'>Remarks</div>
         <div class='remarks'>
           <?php echo $remarks; ?>
-        </div>
+        </div><br />
       <?php endif; ?>
       <div class='msg'>
         <a href='<?php echo get_bloginfo('url'); ?>/contact/'>Contact us for more information</a>
-      </div>
+      </div><br />
     </div>
   </div>
 </div>

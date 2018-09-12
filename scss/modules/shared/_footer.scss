@@ -35,11 +35,13 @@
           text-decoration: none;
         }
 
+        @media (hover: hover) {
         &:hover {
-          a {
-            opacity: 0.5;
+            a {
+              opacity: 0.5;
+            }
+            outline: $borderSoft;
           }
-          outline: $borderSoft;
         }
       }
     }
@@ -48,12 +50,16 @@
   @media screen and (max-width: $mobile) {
     .footer__inner {
       @include pad(2, 4);
+      flex-wrap: wrap;
 
       .column {
-        width: 50%;
+        width: 100%;
+        border-right: none;
+        flex-direction: row;
 
-        &:nth-child(2), &:nth-child(3) {
-          display: none;
+        &:nth-child(1) {
+          border-bottom: $border;
+          text-decoration: underline;
         }
       }
     }

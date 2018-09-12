@@ -12,7 +12,6 @@
       width: 100%;
       font-size: $fontHuge;
       text-transform: uppercase;
-      //text-decoration: underline;
       padding-bottom: $space;
       border-bottom: $borderAlt;
     }
@@ -32,11 +31,10 @@
 
       .heading {
         font-weight: bold;
-        padding-bottom: $space;
+        padding-bottom: $space / 2;
       }
 
       .number, .colours, .size, .dimensions, .remarks {
-        padding-bottom: $space * 2;
         font-style: italic;
       }
 
@@ -45,13 +43,13 @@
           display: flex;
 
           .dimension-label {
-            width: 35%;
+            width: 40%;
             padding-right: $space;
             font-style: normal;
           }
 
           .dimension-value {
-            width: 65%;
+            width: 60%;
           }
         }
       }
@@ -65,6 +63,7 @@
         height: 300px;
         display: flex;
         justify-content: center;
+        padding: $space;
 
         .item {
           display: none;
@@ -96,7 +95,7 @@
       .gallery-nav {
         width: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         border-top: 1px solid rgba($black, 0.25);
         padding-top: $space * 2;
         margin-top: $space;
@@ -117,8 +116,79 @@
             height: auto;
           }
 
-          &.active, &:hover {
+          @media (hover: hover) {
+            &:hover { opacity: 1; }
+          }
+
+          &.active {
             opacity: 1;
+          }
+        }
+      }
+
+      @media screen and (max-width: $mobile) {
+        .gallery-images {
+          height: auto;
+
+          .item {
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: $tabletPortrait) {
+      @include pad(3, 3);
+
+      .gallery {
+        .gallery-images {
+          justify-content: flex-start;
+          padding-left: $space * 2;
+        }
+
+        .gallery-nav {
+          justify-content: flex-start;
+          padding-left: $space;
+        }
+      }
+
+      .product-pane {
+        &.left, &.right {
+          width: 100%;
+        }
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      .gallery {
+        .gallery-images {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .gallery-nav {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      .product-pane {
+        &.right {
+          padding-left: 0;
+        }
+
+        .dimensions {
+          .dimension {
+            .dimension-label {
+              width: 40%;
+            }
+
+            .dimension-value {
+              width: 60%;
+            }
           }
         }
       }
