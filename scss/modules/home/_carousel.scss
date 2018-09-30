@@ -1,6 +1,6 @@
 .carousel {
   width: 100%;
-  height: 50vh;
+  height: 55vh;
   overflow: hidden;
   border-top: 1px solid rgba($black, 0.25);
   border-bottom: 1px solid rgba($black, 0.25);
@@ -23,7 +23,7 @@
       padding: $space * 2;
       opacity: 0.25;
       cursor: pointer;
-      font-size: $fontHuge;
+      font-size: $fontLarge;
       transition: $transition;
       top: 50%;
       transform: translateY(-50%);
@@ -109,36 +109,49 @@
       .slide-title {
         @include pad(1, 0.5);
         @include margin(2, 4);
-        opacity: 0;
+        opacity: 1;
         transition: $transitionMedium;
         position: absolute;
         bottom: 0;
         right: 0;
         background: rgba($white, 0.5);
+        pointer-events: none;
 
         a {
           text-decoration: none;
-        }
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
 
-        .title {
-          border-bottom: $borderAlt;
-          font-size: $fontLarge;
-          transition: $transitionFast;
-          text-decoration: none;
-        }
+          .title {
+            font-size: $fontLarge;
+            transition: $transitionFast;
+            font-weight: bold;
+            text-decoration: none;
+            padding-bottom: $space / 2;
+          }
 
-        .link {
-          padding-top: $space / 2;
-          font-size: $fontSmall;
-          width: 100%;
-          text-align: right;
-          transition: $transitionFast;
-          text-decoration: underline;
+          .line {
+            transition: $transition;
+            background-color: $black;
+            width: 0%;
+            height: 2px;
+          }
+
+          .link {
+            padding-top: $space / 2;
+            font-size: $fontSmall;
+            width: 100%;
+            text-align: right;
+            transition: $transitionFast;
+          }
         }
 
         &:hover {
-          .title, .link {
-            opacity: 0.5;
+          a {
+            .title, .link, .line {
+              opacity: 0.5;
+            }
           }
         }
       }
@@ -151,7 +164,10 @@
         opacity: 1;
 
         .slide-title {
-          opacity: 1;
+          pointer-events: all;
+          .line {
+            width: 100%;
+          }
         }
 
         img {

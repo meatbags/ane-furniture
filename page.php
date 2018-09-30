@@ -8,6 +8,7 @@
 
 <div class='page-content'>
   <div class='page-content__inner'>
+    <div class='page-title'><?php echo get_the_title(); ?></div>
     <?php
     if ($query->have_posts()):
       while ($query->have_posts()):
@@ -22,10 +23,12 @@
               <img src='<?php echo $thumb['sizes']['medium']; ?>' alt='' />
             </div>
             <div class='product-item__title'>
-              <?php echo $title; ?>
+              <div class='text'>
+                <?php echo $title; ?>
+                <div class='line'></div>
+              </div>
             </div>
           </a>
-          <div class='product-item__border'></div>
         </div>
         <?php
       endwhile;

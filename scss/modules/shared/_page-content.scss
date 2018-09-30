@@ -14,20 +14,32 @@
     align-items: flex-start;
     flex-wrap: wrap;
 
+    .page-title {
+      width: 100%;
+      font-size: $fontHuge;
+      display: block;
+      text-decoration: underline;
+      @include pad(2, 1);
+    }
+
     .product-item {
       width: 33.33%;
-      height: 250px;
       padding: $space * 2;
       position: relative;
       display: flex;
+      flex-direction: column;
 
       a {
         width: 100%;
         height: 100%;
+        text-decoration: none;
 
         .product-item__image {
           width: 100%;
-          height: 100%;
+          height: 225px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           overflow: hidden;
 
           img {
@@ -39,52 +51,41 @@
         }
 
         .product-item__title {
-          @include pad(1, 0.5);
-          @include margin(0.5, 2);
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          transform: translate(-4px, -4px);
+          @include pad(0, 1);
+          width: 100%;
           transition: $transition;
-          background: lighten($colourBackground, 10%);
-          box-shadow: 2px 2px 2px rgba($black, 0.25);
-          z-index: 100;
-        }
-      }
+          display: flex;
+          justify-content: flex-end;
 
-      .product-item__border {
-        pointer-events: none;
-        opacity: 0;
-        transform: scale(0.9, 0.9);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: $border;
-        transition: $transition;
+          .text {
+            font-size: $fontLarge;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-weight: bold;
+
+            .line {
+              margin-top: $space * 0.5;
+              width: 0%;
+              height: 2px;
+              background-color: $black;
+              transition: $transitionFast;
+            }
+          }
+        }
       }
 
       @media screen and (min-width: $mobile) {
         &:hover {
           a {
-            .product-item__image {
-              img {
-                opacity: 0.75;
-                //transform: scale(.95, .95);
+            .product-item__title {
+              .text {
+
+                .line {
+                  width: 100%;
+                }
               }
             }
-
-            .product-item__title {
-              opacity: 1;
-              transform: translate(0, 0);
-            }
-          }
-
-          .product-item__border {
-            opacity: 1;
-            transform: scale(0.95, 0.95);
-            box-shadow: 5px 5px 10px rgba($black, 0.1);
           }
         }
       }
@@ -101,7 +102,9 @@
     @media screen and (max-width: $mobile) {
       .product-item {
         width: 100%;
-        height: 300px;
+        a .product-item__image {
+          height: 300px;
+        }
       }
     }
   }

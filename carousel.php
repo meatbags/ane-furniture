@@ -23,6 +23,7 @@ if ($q->have_posts()): ?>
           <div class='slide-title'>
             <a href='<?php echo $url; ?>'>
               <div class='title'><?php echo $title; ?></div>
+              <div class='line'></div>
               <div class='link'>View Product</div>
             </a>
           </div>

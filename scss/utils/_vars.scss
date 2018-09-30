@@ -2,6 +2,7 @@ $colourPrimary: #222;
 $colourSecondary: #666;
 $colourAlt: #e8e8ef;
 $colourBackground: $colourAlt;
+$colourHighlight: #ff7e31;
 $colourDark: darken(#e8e8ea, 12.5%);
 $white: #fff;
 $black: #000;
@@ -9,19 +10,20 @@ $colourGradient: linear-gradient(0deg, $white, $colourAlt);
 $colourGradientAlt: linear-gradient(0deg, rgba($white, 0), $colourAlt);
 
 $space: 8px;
-$width: 960px;
+$width: 1100px;
 $mobile: 760px;
 $tabletPortrait: 800px;
 $titleBarHeight: 76px;
 $footerHeight: 150px;
 
 $transition: 0.5s;
-$transitionFast: 0.25s;
+$transitionFast: 0.35s;
 $transitionSlow: 1s;
 $transitionMedium: 0.7s;
 
 $border: 1px solid rgba(#000, 0.5);
 $borderAlt: 3px double rgba(#000, 0.5);
 $borderSoft: 1px solid rgba(#000, 0.25);
+$borderThick: 3px solid $black;
 
 $zTitle: 100;
