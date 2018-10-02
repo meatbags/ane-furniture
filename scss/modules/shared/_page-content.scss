@@ -19,7 +19,7 @@
       font-size: $fontHuge;
       display: block;
       text-decoration: underline;
-      @include pad(2, 1);
+      @include pad(2, 3);
     }
 
     .product-item {
@@ -33,18 +33,20 @@
         width: 100%;
         height: 100%;
         text-decoration: none;
+        box-shadow: 1px 1px 2px rgba($black, 0.05), -1px -1px 2px rgba($black, 0.05);
 
         .product-item__image {
           width: 100%;
           height: 225px;
           display: flex;
           justify-content: center;
-          align-items: center;
+          align-items: flex-start;
           overflow: hidden;
+          background: $colourBackground;
 
           img {
+            min-height: 100%;
             min-width: 100%;
-            height: auto;
             object-fit: cover;
             transition: $transition;
           }
@@ -56,20 +58,26 @@
           transition: $transition;
           display: flex;
           justify-content: flex-end;
+          padding-right: $space;
 
           .text {
-            font-size: $fontLarge;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            font-weight: bold;
 
             .line {
               margin-top: $space * 0.5;
               width: 0%;
-              height: 2px;
-              background-color: $black;
+              opacity: 0.5;
+              height: 1px;
+              background: $black;
               transition: $transitionFast;
+            }
+
+            .view-prompt {
+              padding-top: $space / 2;
+              opacity: 0.5;
+              font-size: $fontSmall;
             }
           }
         }
@@ -78,11 +86,27 @@
       @media screen and (min-width: $mobile) {
         &:hover {
           a {
+            box-shadow: 5px 5px 10px rgba($black, 0.1), -1px -1px 4px rgba($black, 0.1);
+            outline: 1px solid rgba($black, 0.2);
+
+            .product-item__image {
+              img {
+                transform: scale(1.05, 1.05);
+              }
+            }
+
             .product-item__title {
               .text {
+                font-weight: bold;
 
                 .line {
                   width: 100%;
+                  opacity: 1;
+                }
+
+                .view-prompt {
+                  opacity: 1;
+                  font-weight: normal;
                 }
               }
             }

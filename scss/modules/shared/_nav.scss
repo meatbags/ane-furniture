@@ -5,14 +5,16 @@
 
 .nav {
   @extend .section;
-  border-bottom: 1px solid rgba(#000, 0.25);
+  //border-bottom: 1px solid rgba(#000, 0.25);
+  box-shadow: $boxShadow;
   margin-top: $titleBarHeight;
+  height: $navHeight;
 
   .nav__inner {
     @extend .section__inner;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 1px;
 
     .item {
       cursor: pointer;
@@ -21,8 +23,10 @@
       display: flex;
       justify-content: center;
       text-transform: uppercase;
-      border-top: 1px solid rgba(#000, 0);
-      border-bottom: 1px solid rgba(#000, 0);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
 
       .over {
         display: flex;
@@ -37,7 +41,9 @@
           width: 100%;
           height: 100%;
           padding: $space * 1.5;
-          padding-bottom: $space * 1.5;
+          padding-bottom: $space;
+          transition: $transitionFast;
+          border-bottom: 0px solid transparent;
         }
       }
 
@@ -46,30 +52,40 @@
         pointer-events: none;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 0;
+        width: 0;
+        height: 100%;
         opacity: 0;
-        background: $colourGradient;
+        //background: $colourGradient;
         transition: $transitionFast;
         z-index: 1;
       }
 
       @media screen and (min-width: $mobile) {
         &:hover {
-          border-top: $border;
+          .over {
+            a {
+              color: $colourHighlight;
+              border-bottom: $space/2 solid $colourHighlight;
+            }
+          }
 
           .under {
-            height: 100%;
+            width: 100%;
             opacity: 1;
           }
         }
       }
 
       &.active {
-        border-top: $border;
+        .over {
+          a {
+            color: $colourHighlight;
+            border-bottom: $space/2 solid $colourHighlight;
+          }
+        }
 
         .under {
-          height: 100%;
+          width: 100%;
           opacity: 1;
         }
       }

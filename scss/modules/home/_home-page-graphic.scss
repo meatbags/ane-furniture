@@ -1,0 +1,13 @@
+$ds: $space - 1px;
+
+.home-page-graphic {
+  width: 100%;
+  height: $space * 4;
+  //background: $colourHighlight;
+  //background: linear-gradient(45deg, rgba($colourHighlight, 0.5) 1px, transparent 1px);
+  //background-size: $space $space;
+
+  &.alt {
+    height: $space * 1.5;
+  }
+}

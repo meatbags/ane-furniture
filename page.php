@@ -26,6 +26,7 @@
               <div class='text'>
                 <?php echo $title; ?>
                 <div class='line'></div>
+                <div class='view-prompt'>View Product</div>
               </div>
             </div>
           </a>

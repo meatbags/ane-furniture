@@ -65,6 +65,7 @@
           <?php endwhile; ?>
         <?php endif; ?>
       </div>
+      <div class='title'>Catalogue</div><br />
     <?php else: ?>
       You are not logged in. <a href='<?php echo get_bloginfo('url'); ?>/login/'>Log in here</a>
     <?php endif; ?>

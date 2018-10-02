@@ -2,9 +2,14 @@
   $url = get_bloginfo('url');
   get_header();
   get_template_part('nav');
-  get_template_part('carousel');
-  get_template_part('cats');
 ?>
+
+<div class='home-page-graphic'></div>
+<?php get_template_part('carousel'); ?>
+<div class='home-page-graphic alt'></div>
+
+<?php get_template_part('cats'); ?>
+
 <div id='about' class='about'>
   <div class='about__inner'>
     <?php

@@ -6,14 +6,14 @@
     @extend .section__inner;
     display: flex;
     justify-content: flex-start;
-    background: $colourGradient;
-    border-top: 1px solid rgba($black, 0.25);
+    //background: $colourGradient;
+    //border-top: 1px solid rgba($black, 0.25);
 
     .list {
       @include pad(2, 1);
       display: flex;
       justify-content: flex-start;
-      background: $colourGradient;
+      //background: $colourGradient;
 
       .item {
         @include pad(1, 0.5);

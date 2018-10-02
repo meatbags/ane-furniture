@@ -23,6 +23,7 @@
     .logo {
       position: relative;
       height: 100%;
+      transition: opacity $transitionFast;
 
       img {
         position: absolute;
@@ -31,6 +32,12 @@
         bottom: 0;
         left: 0;
         margin: $space;
+      }
+
+      @media screen and (min-width: $mobile) {
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
 
@@ -48,6 +55,7 @@
         cursor: pointer;
         transition: $transitionFast;
         width: 70px;
+        border-bottom: 0px solid transparent;
 
         @media screen and (max-width: $mobile) {
           width: auto;
@@ -66,7 +74,6 @@
         i {
           padding-bottom: $space / 2;
           font-size: $fontSize;
-          transition: $transitionFast;
         }
 
         .msg {
@@ -78,10 +85,8 @@
 
         @media screen and (min-width: $mobile) {
           &:hover {
-            opacity: 0.5;
-            i {
-              padding-bottom: $space * 0.75;
-            }
+            color: $colourHighlight;
+            border-bottom: $space/2 solid $colourHighlight;
           }
         }
       }

@@ -2,10 +2,10 @@
   width: 100%;
   height: 55vh;
   overflow: hidden;
-  border-top: 1px solid rgba($black, 0.25);
-  border-bottom: 1px solid rgba($black, 0.25);
-  margin-top: 1px;
-  margin-bottom: 1px;
+  //border-top: 1px solid rgba($black, 0.25);
+  //border-bottom: 1px solid rgba($black, 0.25);
+  //margin-top: 1px;
+  //margin-bottom: 1px;
   position: relative;
 
   .carousel-controls {
@@ -70,7 +70,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background: $colourGradientAlt;
+    //background: $colourGradientAlt;
     pointer-events: none;
     opacity: 0.25;
   }
@@ -135,7 +135,7 @@
             transition: $transition;
             background-color: $black;
             width: 0%;
-            height: 2px;
+            height: 1px;
           }
 
           .link {

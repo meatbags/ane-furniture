@@ -47,14 +47,15 @@
   <div class='nav__inner'>
     <?php
       $title = lcfirst(get_the_title());
-      $slugs = array('beds', 'cabinets', 'shelves', 'casegoods', 'tables', 'suites');
+      $slugs = array('Beds', 'Bedroom Furniture', 'Living & Dining', 'Lounge & Chairs', 'Promotion');
       foreach($slugs as $slug):
-        $mobileHide = ($slug == 'cabinets' || $slug == 'tables') ? ' mobile-hide' : '';
+        $clean = sanitize_title($slug);
+        $mobileHide = ($slug == 'Living & Dining' || $slug == 'Lounge & Chairs') ? ' mobile-hide' : '';
         ?>
-      <div class='<?php echo ($title === $slug ? 'item active' : 'item'); ?><?php echo $mobileHide; ?>'>
+      <div class='<?php echo ($title === $clean ? 'item active' : 'item'); ?><?php echo $mobileHide; ?>'>
         <div class='under'></div>
         <div class='over'>
-          <a href='<?php echo get_site_url() . "/" . $slug; ?>/'>
+          <a href='<?php echo get_site_url() . "/" . $clean; ?>/'>
             <?php echo $slug; ?>
           </a>
         </div>
