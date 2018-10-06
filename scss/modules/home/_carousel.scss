@@ -1,11 +1,7 @@
 .carousel {
+  @include pad(0, 2);
   width: 100%;
-  height: 55vh;
   overflow: hidden;
-  //border-top: 1px solid rgba($black, 0.25);
-  //border-bottom: 1px solid rgba($black, 0.25);
-  //margin-top: 1px;
-  //margin-bottom: 1px;
   position: relative;
 
   .carousel-controls {
@@ -27,6 +23,7 @@
       transition: $transition;
       top: 50%;
       transform: translateY(-50%);
+      //color: $colourHighlight;
 
       i {
         transition: $transition;
@@ -66,13 +63,13 @@
 
   .carousel-overlay {
     position: absolute;
-    height: 20%;
+    height: 50%;
     width: 100%;
-    top: 0;
+    bottom: 0;
     left: 0;
-    //background: $colourGradientAlt;
+    background: linear-gradient(0deg, $colourHighlight, transparent);
     pointer-events: none;
-    opacity: 0.25;
+    opacity: 0.2;
   }
 
   .carousel-slider {
@@ -82,9 +79,9 @@
 
   .carousel__inner {
     @include pad(0, 2);
+    height: 60vh;
     display: flex;
     justify-content: flex-start;
-    height: 100%;
     width: 100%;
 
     .slide {
@@ -126,13 +123,13 @@
           .title {
             font-size: $fontLarge;
             transition: $transitionFast;
-            font-weight: bold;
+            //font-weight: bold;
             text-decoration: none;
             padding-bottom: $space / 2;
           }
 
           .line {
-            transition: $transition;
+            transition: $transitionSlow;
             background-color: $black;
             width: 0%;
             height: 1px;

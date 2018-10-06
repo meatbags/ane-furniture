@@ -11,13 +11,13 @@
     .product-title {
       width: 100%;
       font-size: $fontHuge;
-      text-transform: uppercase;
+      //text-transform: uppercase;
       padding-bottom: $space;
-      border-bottom: $borderAlt;
+      border-bottom: $border;
     }
 
     .product-pane {
-      padding-top: $space;
+      padding-top: $space * 2;
 
       &.left {
         width: 60%;
@@ -36,6 +36,10 @@
 
       .number, .colours, .size, .dimensions, .remarks {
         font-style: italic;
+      }
+
+      .size {
+        text-transform: capitalize;
       }
 
       .dimensions {
@@ -60,10 +64,16 @@
 
       .gallery-images {
         width: 100%;
-        height: 300px;
+        height: 340px;
         display: flex;
         justify-content: center;
+        overflow: hidden;
         padding: $space;
+        cursor: crosshair;
+
+        &:hover {
+          outline: $border;
+        }
 
         .item {
           display: none;
@@ -88,6 +98,21 @@
 
           &.active {
             display: flex;
+          }
+        }
+
+        .item-hover {
+          display: none;
+          pointer-events: none;
+          position: absolute;
+          opacity: 0;
+
+          &.active {
+            display: block;
+
+            &.over {
+              opacity: 1;
+            }
           }
         }
       }

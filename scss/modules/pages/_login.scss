@@ -8,10 +8,12 @@
 
     .title {
       font-size: $fontHuge;
+      width: 100%;
+      border-bottom: $border;
+      padding-bottom: $space;
     }
 
     form {
-      border-top: $borderAlt;
       margin-top: $space;
       padding-top: $space;
       width: auto;

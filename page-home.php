@@ -1,18 +1,12 @@
-<?php
-  $url = get_bloginfo('url');
-  get_header();
-  get_template_part('nav');
-?>
-
-<div class='home-page-graphic'></div>
+<?php get_header(); ?>
+<?php get_template_part('nav'); ?>
 <?php get_template_part('carousel'); ?>
-<div class='home-page-graphic alt'></div>
-
 <?php get_template_part('cats'); ?>
 
 <div id='about' class='about'>
   <div class='about__inner'>
     <?php
+      $url = get_bloginfo('url');
       $q = new WP_Query('pagename=about');
       while($q->have_posts()):
         $q->the_post(); ?>

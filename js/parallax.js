@@ -6,7 +6,8 @@ class Parallax {
   cascadeFadeIn() {
     // cascade fade in
     var count = 0;
-    document.querySelectorAll('.parallax-hide').forEach(e => {
+    const selector = '.parallax-hide:not(.filtered)';
+    document.querySelectorAll(selector).forEach(e => {
       const ms = 50 + 150 * count;
       count += 1;
       setTimeout(() => { e.classList.add('parallax-active'); }, ms);

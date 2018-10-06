@@ -18,8 +18,27 @@
       width: 100%;
       font-size: $fontHuge;
       display: block;
-      text-decoration: underline;
-      @include pad(2, 3);
+      //text-decoration: underline;
+      @include pad(2, 2);
+
+      .aside {
+        opacity: 0;
+        transition: $transition;
+        //font-size: $fontSize;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+
+    .no-product-found {
+      display: none;
+      @include pad(2, 2);
+
+      &.active {
+        display: block;
+      }
     }
 
     .product-item {
@@ -81,6 +100,10 @@
             }
           }
         }
+      }
+
+      &.filtered {
+        display: none;
       }
 
       @media screen and (min-width: $mobile) {

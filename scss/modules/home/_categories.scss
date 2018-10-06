@@ -6,6 +6,7 @@
   border-top: 1px solid rgba(#000, 0.25);
   border-bottom: 1px solid rgba(#000, 0.25);
   background: $colourBackground;
+  box-shadow: $boxShadow;
 
   .categories__inner {
     @include pad(2, 4);

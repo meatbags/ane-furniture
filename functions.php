@@ -7,27 +7,38 @@ function anefurni_setup() {
 add_action('after_setup_theme', 'anefurni_setup');
 
 function get_custom_types() {
-	return array('suites', 'beds', 'cabinets', 'shelves', 'casegoods', 'tables', 'documents');
+	return [
+		['beds', 'Beds'],
+		['casegoods', 'Bedroom Furniture'],
+		['dining', 'Dining'],
+		['lounge_chairs', 'Lounge & Chairs'],
+		['occasional', 'Occasional'],
+		['promotional', 'Promotional'],
+		['documents', 'Documents']
+	];
 }
 
 function add_admin_post_types() {
 	$custom_types = get_custom_types();
-	foreach ($custom_types as $slug) {
+	foreach ($custom_types as $t) {
+		$slug = $t[0];
+		$title = $t[1];
 		register_post_type($slug, array(
-			'label' => ucfirst($slug),
+			'label' => $title,
 			'public' => true,
 			'capability_type' => 'post',
 			'hierarchical' => true,
 			'rewrite' => array('slug' => $slug),
 			'query_var' => true,
 			'menu_icon' => 'dashicons-admin-page',
-			'taxonomies' => (($slug != 'documents') ? array('category') : array()),
+			'taxonomies' => array(),//(($slug != 'documents') ? array('category') : array()),
 			'supports' => array('title', 'page-attributes')
 		));
 	}
 }
 add_action('init', 'add_admin_post_types');
 
+/*
 function custom_post_type_cat_filter($query) {
 	$custom_types = get_custom_types();
   if ( !is_admin() && $query->is_main_query() ) {
@@ -37,6 +48,7 @@ function custom_post_type_cat_filter($query) {
   }
 }
 add_action('pre_get_posts', 'custom_post_type_cat_filter');
+*/
 
 function remove_admin_post_types() {
 	remove_menu_page('edit.php');

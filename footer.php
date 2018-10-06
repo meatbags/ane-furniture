@@ -10,14 +10,14 @@
     </div>
     <div class='column mobile-hide'>
       <div class='item'><a href='<?php echo $url; ?>/beds/'>Beds</a></div>
-      <div class='item'><a href='<?php echo $url; ?>/cabinets/'>Cabinets</a></div>
-      <div class='item'><a href='<?php echo $url; ?>/shelves/'>Shelves</a></div>
+      <div class='item'><a href='<?php echo $url; ?>/bedroom-furniture/'>Bedroom Furniture</a></div>
+      <div class='item'><a href='<?php echo $url; ?>/dining/'>Dining</a></div>
       <div class='item'><a href='<?php echo $url; ?>/tables/'>Tables</a></div>
     </div>
     <div class='column mobile-hide'>
-      <div class='item'><a href='<?php echo $url; ?>/category/drawers/'>Drawers</a></div>
-      <div class='item'><a href='<?php echo $url; ?>/category/coffeetables/'>Coffee Tables</a></div>
-      <div class='item'><a href='<?php echo $url; ?>/category/wardrobes/'>Wardrobes</a></div>
+      <div class='item'><a href='<?php echo $url; ?>/occasional/'>Occasional</a></div>
+      <div class='item'><a href='<?php echo $url; ?>/lounge-chairs/'>Lounge & Chairs</a></div>
+      <div class='item'><a href='<?php echo $url; ?>/promotional/'>Promotional</a></div>
       <div class='item'>&nbsp;</div>
     </div>
     <div class='column'>

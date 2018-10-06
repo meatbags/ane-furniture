@@ -8,7 +8,7 @@ $title = get_the_title();
 $colours = $var['colour'];
 $thumb = $var['thumbnail_image'];
 $gallery = $var['image_gallery'];
-$size = $var['size'];
+$sizes = array_key_exists('product_size', $var) ? $var['product_size'] : '';
 $dimensions = $var['dimensions'];
 $remarks = $var['remarks'];
 $number = get_field('product_reference_number');
@@ -28,12 +28,16 @@ $number = get_field('product_reference_number');
             <?php
               $count = 0;
               foreach ($gallery as $img): ?>
-              <div class='item <?php echo ($count++ == 0) ? 'active' : ''; ?>'>
-                <img src='<?php echo $img['sizes']['large']; ?>' />
-                <div class='item-title'>
-                  <?php echo $img['title']; ?>
+                <div class='item <?php echo ($count == 0) ? 'active' : ''; ?>'>
+                  <img src='<?php echo $img['sizes']['large']; ?>' />
+                  <div class='item-title'>
+                    <?php echo $img['title']; ?>
+                  </div>
                 </div>
-              </div>
+                <div class='item-hover <?php echo ($count == 0) ? 'active' : ''; ?>'>
+                  <img src='<?php echo $img['sizes']['large']; ?>' />
+                </div>
+              <?php $count++; ?>
             <?php endforeach; ?>
           </div>
           <?php if (sizeof($gallery) > 1): ?>
@@ -60,10 +64,6 @@ $number = get_field('product_reference_number');
         <div class='heading'>Colours</div>
         <div class='colours'><?php echo $colours; ?></div><br />
       <?php endif; ?>
-      <?php if ($size): ?>
-        <div class='heading'>Sizes</div>
-        <div class='size'><?php echo $size; ?></div><br />
-      <?php endif; ?>
       <?php if ($dimensions && sizeof($dimensions) > 0 && $dimensions[0]['dimension_label']): ?>
         <div class='heading'>Dimensions</div>
         <div class='dimensions'>
@@ -74,6 +74,10 @@ $number = get_field('product_reference_number');
             </div>
           <?php endforeach; ?>
         </div><br />
+      <?php endif; ?>
+      <?php if ($sizes): ?>
+        <div class='heading'>Sizes</div>
+        <div class='size'><?php echo str_replace("kingsingle", "King-Single", implode(', ', $sizes)); ?></div><br />
       <?php endif; ?>
       <?php if ($remarks): ?>
         <div class='heading'>Remarks</div>

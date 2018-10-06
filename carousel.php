@@ -18,7 +18,7 @@ if ($q->have_posts()): ?>
         $title = get_the_title();
         $url = get_the_permalink();
         $img = get_field('thumbnail_image'); ?>
-        <div data-index='<?php echo $count; ?>' class='slide <?php echo ($count == 3) ? 'active ': ''; ?>'>
+        <div data-index='<?php echo $count; ?>' class='slide <?php echo ($count == 2) ? 'active ': ''; ?>'>
           <img src='<?php echo $img['sizes']['large']; ?>'/>
           <div class='slide-title'>
             <a href='<?php echo $url; ?>'>

@@ -38,9 +38,10 @@
         @media screen and (min-width: $mobile) {
           &:hover {
             a {
-              opacity: 0.5;
+              text-decoration: underline;
+              //opacity: 0.5;
             }
-            outline: $borderSoft;
+            //outline: $borderSoft;
           }
         }
       }
