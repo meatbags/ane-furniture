@@ -1,4 +1,45 @@
 <?php
+// Custom search
+add_filter('pre_get_posts', 'custom_search');
+function custom_search( $query ) {
+  if ( $query->is_search ) {
+		$custom_types = get_custom_types();
+		$query->set('post_type', array('beds', 'casegoods', 'dining', 'lounge_chairs', 'occasional', 'promotional', 'postmeta'));
+		$query->set('posts_per_page', -1);
+		$query->set('orderby', 'title');
+  }
+  return $query;
+}
+
+function cf_search_join( $join ) {
+    global $wpdb;
+    if ( is_search() ) {
+      $join .=' LEFT JOIN '.$wpdb->postmeta. ' ON '. $wpdb->posts . '.ID = ' . $wpdb->postmeta . '.post_id ';
+    }
+    return $join;
+}
+add_filter('posts_join', 'cf_search_join' );
+
+function cf_search_where($where) {
+    global $pagenow, $wpdb;
+    if (is_search()) {
+      $where = preg_replace(
+        "/\(\s*".$wpdb->posts.".post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
+        "(".$wpdb->posts.".post_title LIKE $1) OR (".$wpdb->posts.".post_type LIKE $1) OR (".$wpdb->postmeta.".meta_value LIKE $1)", $where);
+    }
+    return $where;
+}
+add_filter('posts_where', 'cf_search_where');
+
+function cf_search_distinct( $where ) {
+    global $wpdb;
+    if (is_search()) {
+      return "DISTINCT";
+    }
+    return $where;
+}
+add_filter( 'posts_distinct', 'cf_search_distinct' );
+
 function anefurni_setup() {
 	add_theme_support('title-tag');
 	add_theme_support('automatic-feed-links');

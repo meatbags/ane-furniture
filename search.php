@@ -2,41 +2,20 @@
   get_header();
   get_template_part('nav');
   get_template_part('breadcrumb');
-
-  // get appropriate slug
-  $slug = '';
-  switch(sanitize_title(get_the_title())) {
-    case 'beds':
-      $slug = 'beds';
-      break;
-    case 'bedroom-furniture':
-      $slug = 'casegoods';
-      break;
-    case 'dining':
-      $slug = 'dining';
-      break;
-    case 'lounge-chairs':
-      $slug = 'lounge_chairs';
-      break;
-    case 'occasional':
-      $slug = 'occasional';
-      break;
-    case 'promotional':
-      $slug = 'promotional';
-      break;
-  }
-
-  $query = new WP_Query(array('post_type' => $slug, 'posts_per_page' => -1, 'order' => 'ASC', 'orderby' => 'title'));
 ?>
 
 <div class='page-content'>
   <div class='page-content__inner'>
-    <div class='page-title'><?php echo get_the_title(); ?><span class='aside'></span></div>
+    <?php if (!is_search()): ?>
+      <div class='page-title'><?php echo get_the_title(); ?><span class='aside'></span></div>
+    <?php else: ?>
+      <div class='page-title is-search'>Search: <span class='aside'><?php echo get_search_query(); ?></span></div>
+    <?php endif; ?>
     <div class='no-product-found'>No products found.</div>
     <?php
-    if ($query->have_posts()):
-      while ($query->have_posts()):
-        $query->the_post();
+    if (have_posts()):
+      while (have_posts()):
+        the_post();
         $title = get_the_title();
         $thumb = get_field('thumbnail_image');
         $link = get_the_permalink();

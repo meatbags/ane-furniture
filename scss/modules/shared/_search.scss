@@ -1,0 +1,37 @@
+.search-bar {
+  @include pad(0, 0.5);
+  @extend .section;
+  position: absolute;
+  width: 100%;
+  z-index: $zSearch;
+  top: 0;
+
+  .search-bar__inner {
+    @extend .section__inner;
+    display: flex;
+    justify-content: flex-end;
+
+    form {
+      input[type="search"] {
+        @include pad(0.5, 0.125);
+        font-family: $fontStack;
+        border: none !important;
+        //text-align: right;
+        //border-bottom: 1px solid rgba($black, 0.5);
+        outline: none !important;
+        border-radius: 0;
+        //background: none;
+      }
+
+      button {
+        @include pad(0.5, 0.125);
+        font-family: $fontStack;
+        border: 1px solid rgba(black, 0.25);
+        outline: none !important;
+        border-radius: 0;
+        cursor: pointer;
+        background: none;
+      }
+    }
+  }
+}

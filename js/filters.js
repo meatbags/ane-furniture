@@ -3,7 +3,11 @@ class Filters {
     // filter product pages
     this.query = window.location.search;
     if (this.query != '') {
-      this.filter();
+      if (!document.querySelector('.is-search')) {
+        this.filter();
+      } else {
+        this.showTitle();
+      }
     }
   }
 
@@ -28,7 +32,7 @@ class Filters {
     const titleEl = document.querySelector('.page-title .aside');
     if (titleEl && title) {
       titleEl.innerHTML = ' - ' + title;
-      titleEl.classList.add('active');
+      this.showTitle();
     }
 
     // filter product items
@@ -42,6 +46,13 @@ class Filters {
     });
     if (!found) {
       document.querySelector('.no-product-found').classList.add('active');
+    }
+  }
+
+  showTitle() {
+    const e = document.querySelector('.page-title .aside');
+    if (e) {
+      e.classList.add('active');
     }
   }
 }

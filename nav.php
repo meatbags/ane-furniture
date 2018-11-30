@@ -1,5 +1,16 @@
 <?php $url = get_bloginfo('url'); ?>
 
+<div class='search-bar'>
+  <div class='search-bar__inner'>
+    <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+      <input type="search" class="search-field" value="<?php echo get_search_query() ?>" name="s" />
+      <button type="submit" class="search-submit">
+        Search <i class="fas fa-search"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
 <div class='title-bar'>
   <div class='title-bar__inner'>
     <div class='logo' title='Home'>
@@ -38,6 +49,12 @@
             <div class='msg'>Log In</div>
           </a>
         <?php endif; ?>
+      </div>
+      <div class='item'>
+        <a href='https://www.facebook.com/ANE-Furniture-312860602657818/' target='_blank'>
+          <i class="fab fa-facebook-f"></i>
+          <div class='msg'>Connect</div>
+        </a>
       </div>
     </div>
   </div>

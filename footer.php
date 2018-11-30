@@ -21,9 +21,8 @@
       <div class='item'>&nbsp;</div>
     </div>
     <div class='column'>
-      <div class='item'>
-        <a href='<?php echo $url; ?>/'>&copy; ANE Furniture <?php echo date("Y"); ?></a>
-      </div>
+      <div class='item'><a target='_blank' href='https://www.facebook.com/ANE-Furniture-312860602657818/'>Facebook</a></div>
+      <div class='item'><a href='<?php echo $url; ?>/'>&copy; ANE Furniture <?php echo date("Y"); ?></a></div>
     </div>
   </div>
 </div>
